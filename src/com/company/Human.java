@@ -9,5 +9,7 @@ public class Human {
     Phone mobilePhone;
 
     Animal pet;
+
+    Car vehicle;
 }
 

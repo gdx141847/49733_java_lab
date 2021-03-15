@@ -9,7 +9,7 @@ public class Animal {
     final String species;
     File pic;
 
-    static final public Double DEFAULT_ANIMAL_WEIGHT = 1.0;
+    //static final public Double DEFAULT_ANIMAL_WEIGHT = 1.0;
 
     Animal(String species){
         this.species = species;
@@ -20,13 +20,13 @@ public class Animal {
             default:this.weight =1.0;
         }
 
-        if(this.species == "canis familiaris"){
-            this.weight = 10.0;
-        }else if(this.species == "feline"){
-            this.weight=2.0;
-        }else{
-            this.weight =1.0;
-        }
+        //if(this.species == "canis familiaris"){
+           // this.weight = 10.0;
+        //}else if(this.species == "feline"){
+           // this.weight=2.0;
+        //}else{
+           // this.weight =1.0;
+        //}
     }
 
     void feed() {

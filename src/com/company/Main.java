@@ -71,6 +71,14 @@ public class Main {
         dog.takeForAWalk();
         dog.takeForAWalk();
 
+        Car myCar = new Car();
+        myCar.engineCapacity = 1.2;
+        myCar.color = "Red";
+        human.vehicle = myCar;
+
+
+
+
 
 
     }
