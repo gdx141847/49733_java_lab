@@ -15,7 +15,7 @@ public class Main {
         //cat.name = "Puszek";
         //cat.weight = 2.0;
 
-        System.out.println("dog name = " + dog.name);
+        //System.out.println("dog name = " + dog.name);
         //System.out.println("dog weight = " + dog.weight);
 
         //Phone iphone = new Phone();
@@ -58,7 +58,7 @@ public class Main {
         Character ll;
 
          */
-        dog.feed();
+       /* dog.feed();
         dog.takeForAWalk();
         dog.takeForAWalk();
         dog.takeForAWalk();
@@ -74,7 +74,11 @@ public class Main {
         Car myCar = new Car();
         myCar.engineCapacity = 1.2;
         myCar.color = "Red";
-        human.vehicle = myCar;
+        human.vehicle = myCar;*/
+
+
+        human.getSalary();
+        human.setSalary(2.9);
 
 
 
