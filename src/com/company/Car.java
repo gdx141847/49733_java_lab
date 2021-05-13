@@ -5,5 +5,6 @@ public class Car {
     final String model = "Punto";
     Double engineCapacity;
     String color;
+    Double value;
 
 }
