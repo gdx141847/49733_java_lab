@@ -76,9 +76,10 @@ public class Main {
         myCar.color = "Red";
         human.vehicle = myCar;*/
 
-
+        human.setSalary(6200.0);
         human.getSalary();
-        human.setSalary(2.9);
+
+
 
 
 

@@ -17,13 +17,13 @@ public class Human {
 
     public Double getSalary(){
         Date nowDate = new Date();
-        this.salary = 2.5;
-        System.out.println("Informacje o Twoich zarobkach były pobierane " + nowDate +" Toja wyplata wynosiła "+ this.salary );
+        System.out.println("Informacje o Twoich zarobkach były pobierane " + nowDate +" Toja wyplata wynosiła "+ this.salary*0.75);
+
         return this.salary;
 
     }
     public void setSalary(Double salary){
-            if(salary < 0.0){
+            if(salary <= 0.0){
                 System.out.println("nieprawidlowa wartosc");
             }else{
 
@@ -34,5 +34,7 @@ public class Human {
         }
 
     }
+
+
 }
 
