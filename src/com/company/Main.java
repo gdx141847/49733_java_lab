@@ -82,9 +82,14 @@ public class Main {
         //human.getSalary();
 
         //human.setValue(70000.0);
-        System.out.println(new Car("Fiat", "Punto", 1.2,"Red",3000.0)
-                .equals(new Car("Fiat", "Punto", 1.2,"Red",3000.0)));
+        //System.out.println(new Car("Fiat", "Punto", 1.2,"Red",3000.0)
+                //.equals(new Car("Fiat", "Punto", 1.2,"Red",3000.0)));
+
+        Car myCar = new Car("Fiat","Punto",1.2,"Red",3500.0);
+        Car myCar2 = new Car("Fiat","Punto",1.2,"Red",3500.0);
 
 
+        System.out.println(myCar);
+        System.out.println(myCar2);
     }
 }
