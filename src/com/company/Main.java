@@ -1,12 +1,12 @@
 package com.company;
 
-//import java.sql.SQLOutput;
+import java.sql.SQLOutput;
 
 public class Main {
 
     public static void main(String[] args) {
-        Animal dog = new Animal("canis familiaris");
-        dog.name = "Szarik";
+        //Animal dog = new Animal("canis familiaris");
+        //dog.name = "Szarik";
 
 
 
@@ -26,11 +26,11 @@ public class Main {
         //s11.producer = "Samsung";
         //s11.model = "s11";
 
-        Human human = new Human();
-        human.firstName = "Artur";
-        human.lastName = "Bienkiewicz";
-        human.sex = "male";
-        human.age = 43;
+        //Human human = new Human();
+        //human.firstName = "Artur";
+        //human.lastName = "Bienkiewicz";
+        //human.sex = "male";
+        //human.age = 43;
 
 
         //String version = iphone.getOSVersion();
@@ -71,23 +71,19 @@ public class Main {
         dog.takeForAWalk();
         dog.takeForAWalk();*/
 
-        Car myCar = new Car();
-        myCar.engineCapacity = 1.2;
-        myCar.color = "Red";
+        //Car myCar = new Car();
+        //myCar.engineCapacity = 1.2;
+        //myCar.color = "Red";
         //human.vehicle = myCar;
+        //myCar.value = 50000.0;
 
 
-        human.setSalary(6200.0);
+        //human.setSalary(6200.0);
         //human.getSalary();
 
-        human.setValue(70000.0);
-
-
-
-
-
-
-
+        //human.setValue(70000.0);
+        System.out.println(new Car("Fiat", "Punto", 1.2,"Red",3000.0)
+                .equals(new Car("Fiat", "Punto", 1.2,"Red",3000.0)));
 
 
     }
