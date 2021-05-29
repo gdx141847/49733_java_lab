@@ -1,14 +1,14 @@
 package com.company;
 
 public class Car {
-    private String producer ;
-    private String model ;
-    private Double engineCapacity;
-    private String color;
-    private Double value;
+    final String producer = "Fiat" ;
+    final String model = "Punto";
+    Double engineCapacity;
+    String color;
+    //public Double value;
 
 
-public Car(String producer,String model, Double engineCapacity, String color, Double value ){
+/*public Car(String producer,String model, Double engineCapacity, String color, Double value ){
     this.producer = producer;
     this.model = model;
     this.engineCapacity = engineCapacity;
@@ -16,7 +16,7 @@ public Car(String producer,String model, Double engineCapacity, String color, Do
     this.value = value;
 }
 
-@Override
+/*@Override
 public boolean equals(Object o)
 {
     if (this == o)
@@ -31,6 +31,6 @@ public boolean equals(Object o)
     return model == car.model && engineCapacity == car.engineCapacity &&
            color == car.color && value == car.value &&
             producer.equals(car.producer);
-    }
+    }*/
 
 }

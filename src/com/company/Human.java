@@ -11,14 +11,14 @@ public class Human{
 
     Animal pet;
 
-    private Car vehicle;
+    Car vehicle;
 
     private Double salary;
     private Double value;
 
 
 
-    public Double getSalary(){
+    /*public Double getSalary(){
         Date nowDate = new Date();
         System.out.println("Informacje o Twoich zarobkach były pobierane " + nowDate +" Toja wyplata wynosiła "+ this.salary*0.75);
 
@@ -56,6 +56,6 @@ public class Human{
         }else{
             System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
         }
-    }
+    }*/
 }
 

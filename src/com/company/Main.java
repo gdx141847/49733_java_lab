@@ -5,8 +5,8 @@ import java.sql.SQLOutput;
 public class Main {
 
     public static void main(String[] args) {
-        Animal dog = new Animal("canis familiaris");
-        dog.name = "Szarik";
+        //Animal dog = new Animal("canis familiaris");
+        //dog.name = "Szarik";
 
 
 
@@ -26,11 +26,11 @@ public class Main {
         //s11.producer = "Samsung";
         //s11.model = "s11";
 
-        //Human human = new Human();
-        //human.firstName = "Artur";
-        //human.lastName = "Bienkiewicz";
-        //human.sex = "male";
-        //human.age = 43;
+        Human human = new Human();
+        human.firstName = "Artur";
+        human.lastName = "Bienkiewicz";
+        human.sex = "male";
+        human.age = 43;
 
 
         //String version = iphone.getOSVersion();
@@ -58,7 +58,7 @@ public class Main {
         Character ll;
 
          */
-        dog.feed();
+        /*dog.feed();
         dog.takeForAWalk();
         dog.takeForAWalk();
         dog.takeForAWalk();
@@ -69,12 +69,12 @@ public class Main {
         dog.takeForAWalk();
         dog.takeForAWalk();
         dog.takeForAWalk();
-        dog.takeForAWalk();
+        dog.takeForAWalk();*/
 
-        //Car myCar = new Car();
-        //myCar.engineCapacity = 1.2;
-        //myCar.color = "Red";
-        //human.vehicle = myCar;
+        Car myCar = new Car();
+        myCar.engineCapacity = 1.2;
+        myCar.color = "Red";
+        human.vehicle = myCar;
         //myCar.value = 50000.0;
 
 
