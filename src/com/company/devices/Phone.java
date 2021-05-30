@@ -1,8 +1,7 @@
 package com.company.devices;
 
-public class Phone {
-    public String producer;
-    public String model;
+public class Phone extends Device {
+
     String operationSystem;
     Double screenSize;
 
@@ -11,6 +10,9 @@ public class Phone {
         return "5.32.1";
     }
     public String toString(){
-        return producer+" "+model+" "+operationSystem+" "+screenSize;
+        return producer+" "+model+" "+operationSystem+" "+screenSize+" "+yearOfProduction;
+    }
+    public void turnOn(){
+        System.out.println("It's working!!!");
     }
 }

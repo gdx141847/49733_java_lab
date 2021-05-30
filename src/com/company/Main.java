@@ -5,8 +5,8 @@ import com.company.devices.Phone;
 public class Main {
 
     public static void main(String[] args) {
-        Animal dog = new Animal("canis familiaris");
-        dog.name = "Szarik";
+        /*Animal dog = new Animal("canis familiaris");
+        dog.name = "Szarik";*/
 
 
 
@@ -22,12 +22,15 @@ public class Main {
         //iphone.producer = "apple";
         //iphone.model = "6s";
 
-        Phone s11 = new Phone();
-        s11.producer = "Samsung";
-        s11.model = "s11";
+        Phone s20 = new Phone();
+        s20.producer = "Samsung";
+        s20.model = "s20";
+        s20.yearOfProduction = 2020;
 
 
-        Human human = new Human();
+
+
+        /*Human human = new Human();
         human.firstName = "Artur";
         human.lastName = "Bienkiewicz";
         human.sex = "male";
@@ -39,7 +42,7 @@ public class Main {
         //System.out.println(iphone.getOSVersion());
         //System.out.println(version);
 
-        //human.mobilePhone = iphone;
+        //human.mobilePhone = iphone;*/
 
         /*int a = 3;
         Integer b =3;
@@ -86,14 +89,12 @@ public class Main {
         //System.out.println(new Car("Fiat", "Punto", 1.2,"Red",3000.0)
                 //.equals(new Car("Fiat", "Punto", 1.2,"Red",3000.0)));
 
-        Car myCar = new Car("Fiat","Punto",1.2,"Red",3500.0);
-        Car myCar2 = new Car("Fiat","Punto",1.2,"Red",3500.0);
+        Car myCar = new Car("Fiat","Punto",1.2,"Red",3500.0,1999);
+        //Car myCar2 = new Car("Fiat","Punto",1.2,"Red",3500.0);
 
 
         System.out.println(myCar);
-        System.out.println(myCar2);
-        System.out.println(dog);
-        System.out.println(s11);
-        System.out.println(human);
+        System.out.println(s20);
+
     }
 }
