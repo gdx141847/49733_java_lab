@@ -1,4 +1,4 @@
-package com.company;
+package com.company.devices;
 
 public class Car {
     private String producer;

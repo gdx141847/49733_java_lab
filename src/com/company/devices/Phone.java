@@ -1,8 +1,8 @@
-package com.company;
+package com.company.devices;
 
 public class Phone {
-    String producer;
-    String model;
+    public String producer;
+    public String model;
     String operationSystem;
     Double screenSize;
 

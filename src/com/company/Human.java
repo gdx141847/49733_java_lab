@@ -1,5 +1,6 @@
 package com.company;
-import java.util.Date;
+import com.company.devices.Car;
+import com.company.devices.Phone;
 
 public class Human{
     String firstName;
