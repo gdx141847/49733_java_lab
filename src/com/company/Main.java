@@ -94,7 +94,9 @@ public class Main {
 
 
         System.out.println(myCar);
+        myCar.turnOn();
         System.out.println(s20);
+        s20.turnOn();
 
     }
 }
