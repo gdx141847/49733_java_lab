@@ -5,8 +5,8 @@ import java.sql.SQLOutput;
 public class Main {
 
     public static void main(String[] args) {
-        //Animal dog = new Animal("canis familiaris");
-        //dog.name = "Szarik";
+        Animal dog = new Animal("canis familiaris");
+        dog.name = "Szarik";
 
 
 
@@ -22,9 +22,10 @@ public class Main {
         //iphone.producer = "apple";
         //iphone.model = "6s";
 
-        //Phone s11 = new Phone();
-        //s11.producer = "Samsung";
-        //s11.model = "s11";
+        Phone s11 = new Phone();
+        s11.producer = "Samsung";
+        s11.model = "s11";
+
 
         Human human = new Human();
         human.firstName = "Artur";
@@ -71,10 +72,10 @@ public class Main {
         dog.takeForAWalk();
         dog.takeForAWalk();*/
 
-        Car myCar = new Car();
-        myCar.engineCapacity = 1.2;
-        myCar.color = "Red";
-        human.vehicle = myCar;
+        //Car myCar = new Car();
+        //myCar.engineCapacity = 1.2;
+        //myCar.color = "Red";
+        //human.vehicle = myCar;
         //myCar.value = 50000.0;
 
 
@@ -85,11 +86,14 @@ public class Main {
         //System.out.println(new Car("Fiat", "Punto", 1.2,"Red",3000.0)
                 //.equals(new Car("Fiat", "Punto", 1.2,"Red",3000.0)));
 
-        /*Car myCar = new Car("Fiat","Punto",1.2,"Red",3500.0);
+        Car myCar = new Car("Fiat","Punto",1.2,"Red",3500.0);
         Car myCar2 = new Car("Fiat","Punto",1.2,"Red",3500.0);
 
 
         System.out.println(myCar);
-        System.out.println(myCar2);*/
+        System.out.println(myCar2);
+        System.out.println(dog);
+        System.out.println(s11);
+        System.out.println(human);
     }
 }

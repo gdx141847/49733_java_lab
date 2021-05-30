@@ -6,7 +6,11 @@ public class Phone {
     String operationSystem;
     Double screenSize;
 
-    String getOSVersion(){
+
+    String getOSVersion() {
         return "5.32.1";
+    }
+    public String toString(){
+        return producer+" "+model+" "+operationSystem+" "+screenSize;
     }
 }

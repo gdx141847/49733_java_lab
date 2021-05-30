@@ -57,5 +57,8 @@ public class Human{
             System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
         }
     }*/
+public String toString(){
+    return firstName+" "+lastName+" "+sex+" "+age;
+}
 }
 

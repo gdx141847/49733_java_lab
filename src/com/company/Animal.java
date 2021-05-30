@@ -20,13 +20,13 @@ public class Animal {
             default:this.weight =1.0;
         }
 
-        //if(this.species == "canis familiaris"){
-           // this.weight = 10.0;
-        //}else if(this.species == "feline"){
-           // this.weight=2.0;
-        //}else{
-           // this.weight =1.0;
-        //}
+        if(this.species == "canis familiaris"){
+            this.weight = 10.0;
+        }else if(this.species == "feline"){
+            this.weight=2.0;
+        }else{
+            this.weight =1.0;
+        }
     }
 
     void feed() {
@@ -41,6 +41,9 @@ public class Animal {
         }
 
     }
+public String toString(){
+        return name+" "+weight+" "+species+" "+pic;
+}
 }
 
 
