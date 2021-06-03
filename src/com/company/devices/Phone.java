@@ -1,9 +1,13 @@
 package com.company.devices;
+import com.company.Human;
+import com.company.Sellable;
 
-public class Phone extends Device {
 
-    String operationSystem;
-    Double screenSize;
+public class Phone extends Device implements Sellable {
+
+    public String operationSystem;
+    public Double screenSize;
+
 
 
     String getOSVersion() {
@@ -14,5 +18,11 @@ public class Phone extends Device {
     }
     public void turnOn(){
         System.out.println("It's working!!!");
+    }
+    @Override
+    public void sell(Human seller, Human buyer, Double prize){
+
+
+
     }
 }

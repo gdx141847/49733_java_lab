@@ -1,13 +1,18 @@
 package com.company.devices;
 
-public class Car extends Device {
-
-    private Double engineCapacity;
-    private String color;
-    private  Double value;
+import com.company.Human;
+import com.company.Sellable;
 
 
-public Car(String producer,String model, Double engineCapacity, String color, Double value,Integer yearOfProduction ){
+public class Car extends Device implements Sellable {
+
+    public Double engineCapacity;
+    public String color;
+    public  Double value;
+
+
+
+public Car(/*String producer, String model, Double engineCapacity, String color, Double value,Integer yearOfProduction*/){
     this.producer = producer;
     this.model = model;
     this.engineCapacity = engineCapacity;
@@ -15,7 +20,11 @@ public Car(String producer,String model, Double engineCapacity, String color, Do
     this.value = value;
     this.yearOfProduction = yearOfProduction;
 }
-public void turnOn(){
+
+
+
+
+    public void turnOn(){
     System.out.println("It's working!!!");
 }
 
@@ -39,5 +48,11 @@ public boolean equals(Object o)
 public String toString(){
     return producer+" "+model+" "+engineCapacity+" "+color+" "+value+" "+yearOfProduction;
 }
+@Override
+public void sell(Human seller, Human buyer, Double prize){
+
+
+
+    }
 
 }

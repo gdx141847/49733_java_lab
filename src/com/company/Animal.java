@@ -1,13 +1,15 @@
 package com.company;
 import java.io.File;
 
-public class Animal {
+public class Animal implements Sellable {
     String name;
     private Double weight;
     final String species;
     File pic;
 
-    //static final public Double DEFAULT_ANIMAL_WEIGHT = 1.0;
+
+
+    static final public Double DEFAULT_ANIMAL_WEIGHT = 1.0;
 
     Animal(String species){
         this.species = species;
@@ -39,9 +41,17 @@ public class Animal {
         }
 
     }
-public String toString(){
+    public String toString(){
         return name+" "+weight+" "+species+" "+pic;
 }
+    @Override
+    public void sell(Human seller, Human buyer, Double prize){
+
+
+
+
+}
+
 }
 
 

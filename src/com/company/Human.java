@@ -1,21 +1,25 @@
 package com.company;
+
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
-public class Human{
+public class Human implements Sellable {
     String firstName;
     String lastName;
     String sex;
     Integer age;
+    Double cash;
+
 
     Phone mobilePhone;
-
     Animal pet;
-
     Car vehicle;
+
 
     private Double salary;
     private Double value;
+
+
 
 
 
@@ -37,14 +41,14 @@ public class Human{
                 this.salary = salary;
         }
 
-    }
+    }*/
 
-    public Car getVehicle() {
+    /*ublic Car getVehicle() {
         return vehicle;
-    }
+    }*/
 
 
-    public void setValue(Double value) {
+    /*public void setValue(Double value) {
         this.value =value;
         if(this.salary > this.value){
             System.out.println("Udało się kupić za gotówkę");
@@ -58,8 +62,73 @@ public class Human{
             System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
         }
     }*/
-public String toString(){
-    return firstName+" "+lastName+" "+sex+" "+age;
+    public String toString() {
+        return firstName + " " + lastName + " " + sex + " " + age + " " + cash;
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double prize)
+    {
+        if (vehicle != null) {
+            System.out.println("Mam samochód na sprzedaż!");
+        } else
+        {
+            System.out.println("Nie mam samochodu do sprzedania.");
+        }
+        if (pet != null)
+        {
+            System.out.println("Mam psa na sprzedaż!");
+        } else
+        {
+            System.out.println("Nie mam psa do sprzedania.");
+        }
+        if (mobilePhone != null)
+        {
+            System.out.println("Mam telefon do sprzedania!");
+        } else
+        {
+            System.out.println("Nie mam telefonu do sprzedania.");
+        }
+        if(new Human() != null){
+            System.out.println("Handel ludzmi jest zabroniony");
+        }
+        if (buyer.cash >= prize)
+        {
+            System.out.println("Masz wystarczająco pięniedzy na zakup.");
+
+            if (vehicle != null) {
+                buyer.cash = buyer.cash - prize;
+                seller.cash = seller.cash + prize;
+                buyer.vehicle = seller.vehicle;
+                seller.vehicle = null;
+                System.out.println("Transakcja został przeprowadzona");
+            }
+            if (pet != null) {
+                buyer.cash = buyer.cash - prize;
+                seller.cash = seller.cash + prize;
+                buyer.pet = seller.pet;
+                seller.pet = null;
+                System.out.println("Transakcja został przeprowadzona");
+
+            }
+            if (mobilePhone != null) {
+                buyer.cash = buyer.cash - prize;
+                seller.cash = seller.cash + prize;
+                buyer.mobilePhone = seller.mobilePhone;
+                seller.mobilePhone = null;
+                System.out.println("Transakcja został przeprowadzona");
+
+            }
+
+        }else
+        {
+            System.out.println("Nie stać Ciebie na zakup");
+
+        }
+
+
+
+    }
 }
-}
+
 

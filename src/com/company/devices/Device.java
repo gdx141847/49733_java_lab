@@ -1,6 +1,6 @@
 package com.company.devices;
 
-abstract public class Device {
+abstract public class Device  {
     public String producer;
     public String model;
     public Integer yearOfProduction;
