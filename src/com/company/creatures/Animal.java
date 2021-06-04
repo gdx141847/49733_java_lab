@@ -1,15 +1,18 @@
-package com.company;
-
+package com.company.creatures;
+import com.company.Human;
+import com.company.Sellable;
 import java.io.File;
 
-public class Animal implements Sellable {
+public abstract class Animal implements Sellable,Feedable{
     String name;
-    private Double weight;
-    final String species;
+    Double weight;
+    String species;
     File pic;
 
 
-    static final public Double DEFAULT_ANIMAL_WEIGHT = 1.0;
+
+
+    //static final public Double DEFAULT_ANIMAL_WEIGHT = 1.0;
 
     Animal(String species) {
         this.species = species;
@@ -32,9 +35,21 @@ public class Animal implements Sellable {
         }
     }
 
-    void feed() {
+    public Animal(String name, Double weight, String species, File pic) {
+        this.name = name;
+        this.weight = weight;
+        this.species = species;
+        this.pic = pic;
+    }
+
+    @Override
+    public void feed() {
         this.weight += 1;
         System.out.println("thx for food :D");
+    }
+    @Override
+    public void feed(Double foodWeight){
+
     }
 
     void takeForAWalk() {
@@ -50,13 +65,15 @@ public class Animal implements Sellable {
     }
 
     @Override
-    public void sell(Human seller, Human buyer, Double prize) {
+    public void sell(Human seller, Human buyer, Double prize)
+    {
         if (seller.pet != null) {
             System.out.println("Mam psa na sprzedaż!");
         } else {
             System.out.println("Nie mam psa do sprzedania.");
         }
     }
+
 
 }
 

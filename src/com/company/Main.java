@@ -1,8 +1,7 @@
 package com.company;
+import com.company.creatures.Pet;
 import com.company.devices.Car;
 import com.company.devices.Phone;
-
-import java.sql.SQLOutput;
 
 public class Main {
 
@@ -36,9 +35,9 @@ public class Main {
         human.mobilePhone = s20;
 
 
-        Animal dog = new Animal("canis familiaris");
-        dog.name = "Szarik";
-        human.pet = dog;
+        Pet dog = new Pet("Szarik",10.0,"canis familiaris",null);
+        //dog.name = "Szarik";
+        //human.pet = dog;
 
 
         //String version = iphone.getOSVersion();
@@ -79,7 +78,7 @@ public class Main {
         dog.takeForAWalk();
         dog.takeForAWalk();*/
 
-        Car myCar = new Car();
+        /*Car myCar = new Car();
         myCar.producer = "Fiat";
         myCar.model = "Punto";
         myCar.engineCapacity = 1.2;
@@ -99,7 +98,7 @@ public class Main {
         Human buyer = new Human();
         buyer.vehicle = null;
         buyer.cash = 10000.0;
-        Sellable sellable1 = buyer;
+        Sellable sellable1 = buyer;*/
 
 
         //human.setSalary(6200.0);
@@ -120,11 +119,13 @@ public class Main {
         //myCar.turnOn();
         /*System.out.println(s20);
         s20.turnOn();*/
-        sellable.sell(seller,buyer,1000.0);
+        //sellable.sell(seller,buyer,1000.0);
         /*System.out.println(buyer.cash);
         System.out.println(seller.cash);
         System.out.println(buyer.vehicle);
         System.out.println(seller.vehicle);*/
+
+        System.out.println(dog);
 
 
 
