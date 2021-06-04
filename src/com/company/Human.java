@@ -8,12 +8,12 @@ public class Human implements Sellable {
     String lastName;
     String sex;
     Integer age;
-    Double cash;
+    public Double cash;
 
 
-    Phone mobilePhone;
+    public Phone mobilePhone;
     Animal pet;
-    Car vehicle;
+    public Car vehicle;
 
 
     private Double salary;
@@ -69,26 +69,7 @@ public class Human implements Sellable {
     @Override
     public void sell(Human seller, Human buyer, Double prize)
     {
-        if (vehicle != null) {
-            System.out.println("Mam samochód na sprzedaż!");
-        } else
-        {
-            System.out.println("Nie mam samochodu do sprzedania.");
-        }
-        if (pet != null)
-        {
-            System.out.println("Mam psa na sprzedaż!");
-        } else
-        {
-            System.out.println("Nie mam psa do sprzedania.");
-        }
-        if (mobilePhone != null)
-        {
-            System.out.println("Mam telefon do sprzedania!");
-        } else
-        {
-            System.out.println("Nie mam telefonu do sprzedania.");
-        }
+
         if(new Human() != null){
             System.out.println("Handel ludzmi jest zabroniony");
         }
@@ -101,14 +82,14 @@ public class Human implements Sellable {
                 seller.cash = seller.cash + prize;
                 buyer.vehicle = seller.vehicle;
                 seller.vehicle = null;
-                System.out.println("Transakcja został przeprowadzona");
+                System.out.println("Transakcja został przeprowadzona - kupiłeś auto");
             }
             if (pet != null) {
                 buyer.cash = buyer.cash - prize;
                 seller.cash = seller.cash + prize;
                 buyer.pet = seller.pet;
                 seller.pet = null;
-                System.out.println("Transakcja został przeprowadzona");
+                System.out.println("Transakcja został przeprowadzona - kupiłeś zwierzaka");
 
             }
             if (mobilePhone != null) {
@@ -116,19 +97,22 @@ public class Human implements Sellable {
                 seller.cash = seller.cash + prize;
                 buyer.mobilePhone = seller.mobilePhone;
                 seller.mobilePhone = null;
-                System.out.println("Transakcja został przeprowadzona");
+                System.out.println("Transakcja został przeprowadzona - kupiłeś telefon");
 
             }
 
-        }else
-        {
-            System.out.println("Nie stać Ciebie na zakup");
+       }
+        else
 
-        }
+    {
+        System.out.println("Nie stać Ciebie na zakup");
+
+    }
 
 
 
     }
 }
+
 
 

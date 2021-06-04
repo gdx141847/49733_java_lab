@@ -50,9 +50,12 @@ public String toString(){
 }
 @Override
 public void sell(Human seller, Human buyer, Double prize){
-
-
-
+    if (seller.vehicle != null) {
+        System.out.println("Mam samochód na sprzedaż!");
+    } else {
+        System.out.println("Nie mam samochodu do sprzedania.");
     }
+
+}
 
 }

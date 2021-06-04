@@ -1,6 +1,8 @@
 package com.company.devices;
 
-abstract public class Device  {
+import com.company.Sellable;
+
+abstract public class Device implements Sellable {
     public String producer;
     public String model;
     public Integer yearOfProduction;

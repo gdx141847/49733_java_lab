@@ -91,7 +91,7 @@ public class Main {
         Human seller = new Human();
         seller.vehicle = myCar;
         seller.pet = null;
-        seller.mobilePhone = null;
+        seller.mobilePhone = s20;
         seller.cash = 0.0;
         Sellable sellable = seller;
 
@@ -99,6 +99,7 @@ public class Main {
         Human buyer = new Human();
         buyer.vehicle = null;
         buyer.cash = 10000.0;
+        Sellable sellable1 = buyer;
 
 
         //human.setSalary(6200.0);
@@ -119,7 +120,7 @@ public class Main {
         //myCar.turnOn();
         /*System.out.println(s20);
         s20.turnOn();*/
-        sellable.sell(seller,buyer,4000.0);
+        sellable.sell(seller,buyer,1000.0);
         /*System.out.println(buyer.cash);
         System.out.println(seller.cash);
         System.out.println(buyer.vehicle);

@@ -1,4 +1,5 @@
 package com.company;
+
 import java.io.File;
 
 public class Animal implements Sellable {
@@ -8,24 +9,26 @@ public class Animal implements Sellable {
     File pic;
 
 
-
     static final public Double DEFAULT_ANIMAL_WEIGHT = 1.0;
 
-    Animal(String species){
+    Animal(String species) {
         this.species = species;
 
-        switch(this.species){
-            case "canis familiaris":this.weight=10.0;
-            case " feline":this.weight=2.0;
-            default:this.weight =1.0;
+        switch (this.species) {
+            case "canis familiaris":
+                this.weight = 10.0;
+            case " feline":
+                this.weight = 2.0;
+            default:
+                this.weight = 1.0;
         }
 
-        if(this.species == "canis familiaris"){
+        if (this.species == "canis familiaris") {
             this.weight = 10.0;
-        }else if(this.species == "feline"){
-            this.weight=2.0;
-        }else{
-            this.weight =1.0;
+        } else if (this.species == "feline") {
+            this.weight = 2.0;
+        } else {
+            this.weight = 1.0;
         }
     }
 
@@ -41,16 +44,19 @@ public class Animal implements Sellable {
         }
 
     }
-    public String toString(){
-        return name+" "+weight+" "+species+" "+pic;
-}
+
+    public String toString() {
+        return name + " " + weight + " " + species + " " + pic;
+    }
+
     @Override
-    public void sell(Human seller, Human buyer, Double prize){
-
-
-
-
-}
+    public void sell(Human seller, Human buyer, Double prize) {
+        if (seller.pet != null) {
+            System.out.println("Mam psa na sprzedaż!");
+        } else {
+            System.out.println("Nie mam psa do sprzedania.");
+        }
+    }
 
 }
 
