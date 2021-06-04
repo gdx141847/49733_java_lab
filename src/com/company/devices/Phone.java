@@ -1,13 +1,17 @@
 package com.company.devices;
-
 import com.company.Human;
 import com.company.Sellable;
+import java.util.List;
 
 
 public class Phone extends Device implements Sellable {
 
     public String operationSystem;
     public Double screenSize;
+
+    static final public String servAdd = "www.javaApp.com";
+    static final public String protocol = "https";
+    static final public String version = "1.01.01";
 
 
     String getOSVersion() {
@@ -20,6 +24,22 @@ public class Phone extends Device implements Sellable {
 
     public void turnOn() {
         System.out.println("It's working!!!");
+    }
+
+    public void installAnnApp(String appName){
+
+    }
+    public void installAnnApp(String appName,String appVersion){
+
+    }
+    public void installAnnApp(String appName,String appVersion,String appUrl){
+
+    }
+    public void installAnnApp(List appList){
+
+    }
+    public void installAnnApp(Url url){
+
     }
 
     @Override

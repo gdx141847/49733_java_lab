@@ -1,6 +1,7 @@
 package com.company;
 import com.company.creatures.Pet;
 import com.company.devices.Car;
+import com.company.devices.LPG;
 import com.company.devices.Phone;
 
 public class Main {
@@ -108,7 +109,7 @@ public class Main {
         //System.out.println(new Car("Fiat", "Punto", 1.2,"Red",3000.0)
                 //.equals(new Car("Fiat", "Punto", 1.2,"Red",3000.0)));
 
-        //Car myCar = new Car("Fiat","Punto",1.2,"Red",3500.0,1999);
+        LPG lpg= new LPG("Fiat","Punto",1.2,"blue",2100.0,1999);
         //Car myCar2 = new Car("Fiat","Punto",1.2,"Red",3500.0);
 
 
@@ -123,9 +124,11 @@ public class Main {
         /*System.out.println(buyer.cash);
         System.out.println(seller.cash);
         System.out.println(buyer.vehicle);
-        System.out.println(seller.vehicle);*/
+        System.out.println(seller.vehicle);
 
-        System.out.println(dog);
+        System.out.println(dog);*/
+        System.out.println(lpg);
+        lpg.refuel();
 
 
 
