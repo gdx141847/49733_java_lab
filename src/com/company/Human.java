@@ -9,15 +9,33 @@ public class Human implements Sellable {
     String sex;
     Integer age;
     public Double cash;
+    public Object[] garage = new Object[3];
+    int garageLength = garage.length;
+
+    public Human(){}
+
+
+    public Human(String firstName, String lastName, String sex, Integer age, Double cash,int garageLength) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.sex = sex;
+        this.age = age;
+        this.cash = cash;
+        this.garageLength = garageLength;
+    }
+
+
+
 
 
     public Phone mobilePhone;
     public Animal pet;
-    public Car vehicle;
-
+    //public Car vehicle;
 
     private Double salary;
     private Double value;
+
+
 
 
 
@@ -43,7 +61,7 @@ public class Human implements Sellable {
 
     }*/
 
-    /*ublic Car getVehicle() {
+    /*public Car getVehicle() {
         return vehicle;
     }*/
 
@@ -65,7 +83,6 @@ public class Human implements Sellable {
     public String toString() {
         return firstName + " " + lastName + " " + sex + " " + age + " " + cash;
     }
-
     @Override
     public void sell(Human seller, Human buyer, Double prize)
     {
@@ -77,11 +94,11 @@ public class Human implements Sellable {
         {
             System.out.println("Masz wystarczająco pięniedzy na zakup.");
 
-            if (vehicle != null) {
+            if (garage != null) {
                 buyer.cash = buyer.cash - prize;
                 seller.cash = seller.cash + prize;
-                buyer.vehicle = seller.vehicle;
-                seller.vehicle = null;
+                buyer.garage = seller.garage;
+                seller.garage = null;
                 System.out.println("Transakcja został przeprowadzona - kupiłeś auto");
             }
             if (pet != null) {

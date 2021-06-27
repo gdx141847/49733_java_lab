@@ -1,7 +1,7 @@
 package com.company.devices;
 
-public class Disel extends Car{
-    public Disel(String producer, String model, Double engineCapacity, String color, Double value,Integer yearOfProduction ){
+public class Diesel extends Car{
+    public Diesel(String producer, String model, Double engineCapacity, String color, Double value,Integer yearOfProduction ){
         super(producer,model,engineCapacity,color,value,yearOfProduction);
     }
 

@@ -52,7 +52,7 @@ public abstract class Car extends Device implements Sellable {
 
     @Override
     public void sell(Human seller, Human buyer, Double prize) {
-        if (seller.vehicle != null) {
+        if (seller.garage != null) {
             System.out.println("Mam samochód na sprzedaż!");
         } else {
             System.out.println("Nie mam samochodu do sprzedania.");

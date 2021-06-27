@@ -1,8 +1,7 @@
 package com.company;
 import com.company.creatures.Pet;
-import com.company.devices.Car;
-import com.company.devices.LPG;
-import com.company.devices.Phone;
+import com.company.devices.*;
+import java.util.Arrays;
 
 public class Main {
 
@@ -19,6 +18,8 @@ public class Main {
         //iphone.producer = "apple";
         //iphone.model = "6s";
 
+
+
         Human human = new Human();
         human.firstName = "Artur";
         human.lastName = "Bienkiewicz";
@@ -27,7 +28,8 @@ public class Main {
         human.cash = 0.0;
 
 
-        Phone s20 = new Phone();
+
+        /*Phone s20 = new Phone();
         s20.producer = "Samsung";
         s20.model = "s20";
         s20.operationSystem = "Android";
@@ -36,7 +38,7 @@ public class Main {
         human.mobilePhone = s20;
 
 
-        Pet dog = new Pet("Szarik",10.0,"canis familiaris",null);
+        Pet dog = new Pet("Szarik",10.0,"canis familiaris",null);*/
         //dog.name = "Szarik";
         //human.pet = dog;
 
@@ -86,20 +88,34 @@ public class Main {
         myCar.color = "Red";
         human.vehicle = myCar;
         myCar.value = 5000.0;
-        myCar.yearOfProduction = 1999;
+        myCar.yearOfProduction = 1999;*/
+
+        LPG lpg= new LPG("Fiat","Punto",1.2,"blue",2100.0,1999);
+        //Car myCar2 = new Car("Fiat","Punto",1.2,"Red",3500.0);
+        Diesel diesel = new Diesel("Volkswagen","Passat",1.9,"Silver",3200.0,2006);
+        Electric electric = new Electric("Smart","Fortwo",null,"White",10500.0,2015);
+
+
+        /*Object[] sellerGarage;
+        sellerGarage = new Object[]{lpg,diesel,electric};
+        Object[] buyerGarage;
+        buyerGarage = new Object[]{};*/
 
         Human seller = new Human();
-        seller.vehicle = myCar;
+        seller.garage = new Object []{lpg,diesel,electric};
         seller.pet = null;
-        seller.mobilePhone = s20;
+        seller.mobilePhone = null;
         seller.cash = 0.0;
         Sellable sellable = seller;
+        seller.garageLength = human.garageLength;
+
 
 
         Human buyer = new Human();
-        buyer.vehicle = null;
+        //buyer.vehicle = null;
         buyer.cash = 10000.0;
-        Sellable sellable1 = buyer;*/
+        Sellable sellable1 = buyer;
+        //buyer.garage = ;
 
 
         //human.setSalary(6200.0);
@@ -109,8 +125,6 @@ public class Main {
         //System.out.println(new Car("Fiat", "Punto", 1.2,"Red",3000.0)
                 //.equals(new Car("Fiat", "Punto", 1.2,"Red",3000.0)));
 
-        LPG lpg= new LPG("Fiat","Punto",1.2,"blue",2100.0,1999);
-        //Car myCar2 = new Car("Fiat","Punto",1.2,"Red",3500.0);
 
 
 
@@ -127,8 +141,19 @@ public class Main {
         System.out.println(seller.vehicle);
 
         System.out.println(dog);*/
-        System.out.println(lpg);
-        lpg.refuel();
+        /*System.out.println(lpg);
+        lpg.refuel();*/
+
+
+        System.out.println(Arrays.toString(human.garage));
+        System.out.println(Arrays.toString(seller.garage));
+        System.out.println(Arrays.toString(buyer.garage));
+
+        System.out.println(human.garage.length);
+
+
+
+
 
 
 
