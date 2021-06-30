@@ -143,6 +143,12 @@ public class Human extends Device implements Sellable {
 
 
 
+
+
+
+
+
+
     }
 
 

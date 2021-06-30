@@ -2,11 +2,23 @@ package com.company.devices;
 import com.company.Human;
 import com.company.Sellable;
 
+
+import java.util.ArrayList;
+
+
 public abstract class Car extends Device implements Sellable, Comparable {
+
 
     public Double engineCapacity;
     public String color;
     public Double value;
+
+    public static ArrayList<String> ownerList = new ArrayList();
+
+
+
+
+
 
 
     public Car(String producer, String model, Double engineCapacity, String color, Double value,Integer yearOfProduction) {
@@ -17,6 +29,7 @@ public abstract class Car extends Device implements Sellable, Comparable {
         this.color = color;
         this.value = value;
         this.yearOfProduction = yearOfProduction;
+
     }
 
 
@@ -26,6 +39,7 @@ public abstract class Car extends Device implements Sellable, Comparable {
     }
 
     public abstract void refuel();
+
 
 
 

@@ -1,4 +1,5 @@
 package com.company;
+import com.company.devices.Car;
 import com.company.devices.Diesel;
 import com.company.devices.Electric;
 import com.company.devices.LPG;
@@ -29,6 +30,7 @@ public class Main {
         human.sex = "male";
         human.age = 43;
         human.cash = 0.0;
+        human.garage = new Object[3];
 
 
 
@@ -120,6 +122,8 @@ public class Main {
         Sellable sellable1 = buyer;
         //buyer.garage = ;
 
+        Human person = new Human("Adam","Kowalski","Male",34,5000.0,3);
+
 
         //human.setSalary(6200.0);
         //human.getSalary();
@@ -157,7 +161,17 @@ public class Main {
 //        Arrays.sort(seller.garage);
 //        System.out.println(Arrays.toString(seller.garage));
 
-        human.garageValue(seller.garage);
+//        human.garageValue(seller.garage);
+
+
+        Car.ownerList.add("human");
+        Car.ownerList.add("seller");
+        Car.ownerList.add("buyer");
+
+
+        System.out.println(Car.ownerList);
+
+
 
 
 
