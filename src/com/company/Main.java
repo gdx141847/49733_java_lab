@@ -1,7 +1,10 @@
 package com.company;
-import com.company.creatures.Pet;
-import com.company.devices.*;
+import com.company.devices.Diesel;
+import com.company.devices.Electric;
+import com.company.devices.LPG;
 import java.util.Arrays;
+import java.util.Comparator;
+
 
 public class Main {
 
@@ -145,19 +148,16 @@ public class Main {
         lpg.refuel();*/
 
 
-        System.out.println(Arrays.toString(human.garage));
-        System.out.println(Arrays.toString(seller.garage));
-        System.out.println(Arrays.toString(buyer.garage));
+//        System.out.println(Arrays.toString(human.garage));
+//        System.out.println(Arrays.toString(seller.garage));
+//        System.out.println(Arrays.toString(buyer.garage));
+////
+//        System.out.println(human.garage.length);
 
-        System.out.println(human.garage.length);
+//        Arrays.sort(seller.garage);
+//        System.out.println(Arrays.toString(seller.garage));
 
-
-
-
-
-
-
-
+        human.garageValue(seller.garage);
 
 
 

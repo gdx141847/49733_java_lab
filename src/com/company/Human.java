@@ -1,9 +1,11 @@
 package com.company;
 import com.company.creatures.Animal;
 import com.company.devices.Car;
+import com.company.devices.Device;
+import com.company.devices.Diesel;
 import com.company.devices.Phone;
 
-public class Human implements Sellable {
+public class Human extends Device implements Sellable {
     String firstName;
     String lastName;
     String sex;
@@ -33,12 +35,7 @@ public class Human implements Sellable {
     //public Car vehicle;
 
     private Double salary;
-    private Double value;
-
-
-
-
-
+    //private Double value;
 
 
     /*public Double getSalary(){
@@ -61,25 +58,40 @@ public class Human implements Sellable {
 
     }*/
 
-    /*public Car getVehicle() {
-        return vehicle;
-    }*/
+    public Object getCar(int index) {
+        return garage[index];
 
+    }
+    public Object setCar(int index, Object Car){
+        garage[index] = Car;
+        return Car;
+    }
+
+    public double garageValue(Object[] garage){
+        return value;
+    }
+
+
+
+    @Override
+    public void turnOn() {
+
+    }
 
     /*public void setValue(Double value) {
-        this.value =value;
-        if(this.salary > this.value){
-            System.out.println("Udało się kupić za gotówkę");
-            getVehicle();
+            this.value =value;
+            if(this.salary > this.value){
+                System.out.println("Udało się kupić za gotówkę");
+                getVehicle();
 
-        }else if(this.salary > 0.083*this.value){
-            System.out.println("Udało się kupić na kredyt");
-            getVehicle();
+            }else if(this.salary > 0.083*this.value){
+                System.out.println("Udało się kupić na kredyt");
+                getVehicle();
 
-        }else{
-            System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
-        }
-    }*/
+            }else{
+                System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
+            }
+        }*/
     public String toString() {
         return firstName + " " + lastName + " " + sex + " " + age + " " + cash;
     }
@@ -128,7 +140,12 @@ public class Human implements Sellable {
 
 
 
+
+
+
     }
+
+
 }
 
 

@@ -1,10 +1,8 @@
 package com.company.devices;
-
 import com.company.Human;
 import com.company.Sellable;
 
-
-public abstract class Car extends Device implements Sellable {
+public abstract class Car extends Device implements Sellable, Comparable {
 
     public Double engineCapacity;
     public String color;
@@ -12,6 +10,7 @@ public abstract class Car extends Device implements Sellable {
 
 
     public Car(String producer, String model, Double engineCapacity, String color, Double value,Integer yearOfProduction) {
+
         this.producer = producer;
         this.model = model;
         this.engineCapacity = engineCapacity;
@@ -19,6 +18,7 @@ public abstract class Car extends Device implements Sellable {
         this.value = value;
         this.yearOfProduction = yearOfProduction;
     }
+
 
 
     public void turnOn() {

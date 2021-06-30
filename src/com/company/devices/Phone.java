@@ -1,7 +1,6 @@
 package com.company.devices;
 import com.company.Human;
 import com.company.Sellable;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
