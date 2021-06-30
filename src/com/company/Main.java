@@ -171,6 +171,15 @@ public class Main {
 
         System.out.println(Car.ownerList);
 
+        Application app = new Application();
+        app.name = "wsb extranet";
+        app.version = "10.01.20.01";
+        app.prize = 59.9;
+
+        System.out.println(app);
+
+
+
 
 
 

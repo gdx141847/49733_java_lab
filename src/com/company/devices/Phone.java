@@ -1,8 +1,10 @@
 package com.company.devices;
+import com.company.Application;
 import com.company.Human;
 import com.company.Sellable;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashSet;
 import java.util.List;
 
 
@@ -20,9 +22,12 @@ public class Phone extends Device implements Sellable {
     static final public String version = "1.01.01";
 
 
+
     String getOSVersion() {
         return "5.32.1";
     }
+
+    HashSet<String> appSet = new HashSet<>();
 
     public String toString() {
         return producer + " " + model + " " + operationSystem + " " + screenSize + " " + yearOfProduction;
@@ -70,6 +75,25 @@ public class Phone extends Device implements Sellable {
 
 
     }
+
+
+
+
+    public void installApp(Human buyer,Application app){
+       if(buyer.cash >= app.prize){
+            System.out.println("Możesz kupić aplikacje.");
+            appSet.add(app.name);
+            buyer.cash -= app.prize;
+
+        }else{
+            System.out.println("nie możesz kupić aplikacji.");
+
+        }
+
+
+    }
+
+
 
     @Override
     public void sell(Human seller, Human buyer, Double prize) {

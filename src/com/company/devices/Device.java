@@ -1,6 +1,4 @@
 package com.company.devices;
-
-import com.company.CarComparator;
 import com.company.Sellable;
 
 abstract public class Device implements Sellable{
