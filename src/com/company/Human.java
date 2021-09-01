@@ -32,10 +32,28 @@ public class Human extends Device implements Sellable {
 
     public Phone mobilePhone;
     public Animal pet;
-    //public Car vehicle;
+    private Car vehicle;
 
     private Double salary;
     //private Double value;
+
+
+    public Car getCar(){
+        return this.vehicle;
+    }
+
+    public void setCar(Car vehicle){
+        if(this.salary > vehicle.value){
+            System.out.println("Udało się kupić samochód za gotówkę!!!");
+            this.vehicle = vehicle;
+        }else if(this.salary >= vehicle.value/12){
+            System.out.println("Udało się kupić samochód na kredyt, no trudno !!!");
+            this.vehicle = vehicle;
+        }else{
+            System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
+        };
+
+    }
 
 
     /*public Double getSalary(){
