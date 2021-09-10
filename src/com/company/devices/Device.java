@@ -9,6 +9,10 @@ abstract public class Device implements Sellable{
 
     public abstract void turnOn();
 
+    public double getValue() {
+        return value;
+    }
+
     public String toString() {
         return producer + " " + model + " " + yearOfProduction;
     }

@@ -65,9 +65,9 @@ public abstract class Animal implements Sellable,Feedable{
     }
 
     @Override
-    public void sell(Human seller, Human buyer, Double prize)
+    public void sell(Human seller, Human buyer, double prize)
     {
-        if (seller.pet != null) {
+        if (seller.getPet() != null) {
             System.out.println("Mam psa na sprzedaż!");
         } else {
             System.out.println("Nie mam psa do sprzedania.");

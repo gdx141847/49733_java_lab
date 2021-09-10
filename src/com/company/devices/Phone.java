@@ -80,10 +80,10 @@ public class Phone extends Device implements Sellable {
 
 
     public void installApp(Human buyer,Application app){
-       if(buyer.cash >= app.prize){
+       if(buyer.getCash() >= app.prize){
             System.out.println("Możesz kupić aplikacje.");
             appSet.add(app.name);
-            buyer.cash -= app.prize;
+           buyer.setCash(buyer.getCash() - app.prize);
 
         }else{
             System.out.println("nie możesz kupić aplikacji.");
@@ -96,8 +96,8 @@ public class Phone extends Device implements Sellable {
 
 
     @Override
-    public void sell(Human seller, Human buyer, Double prize) {
-        if (seller.mobilePhone != null) {
+    public void sell(Human seller, Human buyer, double prize) {
+        if (seller.getMobilePhone() != null) {
             System.out.println("Mam telefon do sprzedania!");
         } else {
             System.out.println("Nie mam telefonu do sprzedania.");

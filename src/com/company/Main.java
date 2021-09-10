@@ -25,12 +25,12 @@ public class Main {
 
 
         Human human = new Human();
-        human.firstName = "Artur";
-        human.lastName = "Bienkiewicz";
-        human.sex = "male";
-        human.age = 43;
-        human.cash = 0.0;
-        human.garage = new Object[3];
+        human.setFirstName("Artur");
+        human.setLastName("Bienkiewicz");
+        human.setSex("male");
+        human.setAge(43);
+        human.setCash(0.0);
+
 
 
 
@@ -95,34 +95,28 @@ public class Main {
         myCar.value = 5000.0;
         myCar.yearOfProduction = 1999;*/
 
-        LPG lpg= new LPG("Fiat","Punto",1.2,"blue",2100.0,1999);
-        //Car myCar2 = new Car("Fiat","Punto",1.2,"Red",3500.0);
-        Diesel diesel = new Diesel("Volkswagen","Passat",1.9,"Silver",3200.0,2006);
-        Electric electric = new Electric("Smart","Fortwo",null,"White",10500.0,2015);
-
-
-        /*Object[] sellerGarage;
-        sellerGarage = new Object[]{lpg,diesel,electric};
-        Object[] buyerGarage;
-        buyerGarage = new Object[]{};*/
-
-        Human seller = new Human();
-        seller.garage = new Object []{lpg,diesel,electric};
-        seller.pet = null;
-        seller.mobilePhone = null;
-        seller.cash = 0.0;
-        Sellable sellable = seller;
-        seller.garageLength = human.garageLength;
 
 
 
-        Human buyer = new Human();
-        //buyer.vehicle = null;
-        buyer.cash = 10000.0;
-        Sellable sellable1 = buyer;
-        //buyer.garage = ;
 
-        Human person = new Human("Adam","Kowalski","Male",34,5000.0,3);
+
+//        Human seller = new Human();
+//        seller. = new Car[]{lpg,diesel,electric};
+//        seller.pet = null;
+//        seller.mobilePhone = null;
+//        seller.cash = 0.0;
+//        Sellable sellable = seller;
+//        seller.garage.length = human.garage.length;
+
+
+
+//        Human buyer = new Human();
+//        //buyer.vehicle = null;
+//        buyer.cash = 10000.0;
+//        Sellable sellable1 = buyer;
+//        //buyer.garage = ;
+//
+//        Human person = new Human("Adam","Kowalski","Male",34,5000.0,new Car[3]);
 
 
         //human.setSalary(6200.0);
@@ -164,19 +158,50 @@ public class Main {
 //        human.garageValue(seller.garage);
 
 
-        Car.ownerList.add("human");
-        Car.ownerList.add("seller");
-        Car.ownerList.add("buyer");
 
 
-        System.out.println(Car.ownerList);
 
-        Application app = new Application();
-        app.name = "wsb extranet";
-        app.version = "10.01.20.01";
-        app.prize = 59.9;
+//        System.out.println(Car.ownerList);
+//
+//        Application app = new Application();
+//        app.name = "wsb extranet";
+//        app.version = "10.01.20.01";
+//        app.prize = 59.9;
+//
+//        System.out.println(app);
 
-        System.out.println(app);
+        Car car = new LPG("Fiat","Punto",1.2,"blue",2100.0,2005);
+        Car car2 = new Diesel("Volkswagen","Passat",1.9,"Silver",3200.0,1999);
+        Car car3 = new Electric("Smart","Fortwo",0.0,"White",10500.0,2015);
+
+        Human seller = new Human("Jurek", "Kowalski", "male",43,2500.0,3);
+        seller.setCar(0,car);
+        seller.setCar(1,car2);
+        seller.setCar(2,car3);
+        Human buyer = new Human("Marek", "Nowak", "male",55,2900.0,3);
+
+        System.out.println("Wartość garażu sprzedającego = "+ seller.garageValue());
+        System.out.println("Wartość garażu kupującego = "+ buyer.garageValue());
+        System.out.println();
+        System.out.println("Garaż przed sortowaniem");
+        System.out.println(Arrays.toString(seller.getGarage()));
+        seller.sortCars();
+        System.out.println("Garaż po sortowaniu");
+        System.out.println(Arrays.toString(seller.getGarage()));
+        System.out.println();
+        System.out.println("garaż sprzedającego przed tranzakcją: " + seller);
+        System.out.println("garaż kupującego przed tranzakcją: " + buyer);
+        System.out.println();
+       try{
+           car.sell(seller,buyer,2100);
+       }catch(Exception e){
+           System.out.println(e.getMessage());
+       }
+        System.out.println("garaż sprzedającego przed tranzakcją: " + seller);
+        System.out.println("garaż kupującego przed tranzakcją: " + buyer);
+
+
+
 
 
 

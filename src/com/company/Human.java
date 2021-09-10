@@ -4,56 +4,82 @@ import com.company.devices.Car;
 import com.company.devices.Device;
 import com.company.devices.Diesel;
 import com.company.devices.Phone;
+import java.util.Arrays;
 
-public class Human extends Device implements Sellable {
-    String firstName;
-    String lastName;
-    String sex;
-    Integer age;
-    public Double cash;
-    public Object[] garage = new Object[3];
-    int garageLength = garage.length;
+public class Human implements Sellable {
+    private String firstName;
+    private String lastName;
+    private String sex;
+    private int age;
+    private double cash;
+    private Car[] garage;
 
-    public Human(){}
+    private Phone mobilePhone;
+    private Animal pet;
 
 
-    public Human(String firstName, String lastName, String sex, Integer age, Double cash,int garageLength) {
+    private double salary;
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public Human() {
+        garage = new Car[3];
+    }
+
+
+    public Human(String firstName, String lastName, String sex, int age, double cash, int garageLength) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.sex = sex;
         this.age = age;
         this.cash = cash;
-        this.garageLength = garageLength;
-    }
-
-
-
-
-
-    public Phone mobilePhone;
-    public Animal pet;
-    private Car vehicle;
-
-    private Double salary;
-    //private Double value;
-
-
-    public Car getCar(){
-        return this.vehicle;
-    }
-
-    public void setCar(Car vehicle){
-        if(this.salary > vehicle.value){
-            System.out.println("Udało się kupić samochód za gotówkę!!!");
-            this.vehicle = vehicle;
-        }else if(this.salary >= vehicle.value/12){
-            System.out.println("Udało się kupić samochód na kredyt, no trudno !!!");
-            this.vehicle = vehicle;
-        }else{
-            System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
-        };
+        garage = new Car[garageLength];
 
     }
+
+
+//    public void setCar(Car vehicle){
+//        if(this.salary > vehicle.value){
+//            System.out.println("Udało się kupić samochód za gotówkę!!!");
+//            this.vehicle = vehicle;
+//        }else if(this.salary >= vehicle.value/12){
+//            System.out.println("Udało się kupić samochód na kredyt, no trudno !!!");
+//            this.vehicle = vehicle;
+//        }else{
+//            System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
+//        };
+//
+//    }
 
 
     /*public Double getSalary(){
@@ -76,25 +102,44 @@ public class Human extends Device implements Sellable {
 
     }*/
 
-    public Object getCar(int index) {
-        return garage[index];
-
-    }
-    public Object setCar(int index, Object Car){
-        garage[index] = Car;
-        return Car;
+    public Car[] getGarage() {
+        return garage;
     }
 
-    public double garageValue(Object[] garage){
+    public Car getCar(int spot) {
+        return garage[spot];
+
+    }
+
+
+    public void setCar(int spot, Car car) {
+        garage[spot] = car;
+
+    }
+
+
+    public double garageValue() {
+        double value = 0;
+        for (Car car : garage) {
+            if (car != null) {
+                value += car.getValue();
+            }
+
+        }
         return value;
     }
 
+    public double getCash() {
+        return cash;
+    }
 
-
-    @Override
-    public void turnOn() {
+    public void sortCars() {
+        Arrays.sort(garage, new CarComparator());
 
     }
+
+
+
 
     /*public void setValue(Double value) {
             this.value =value;
@@ -111,17 +156,24 @@ public class Human extends Device implements Sellable {
             }
         }*/
     public String toString() {
-        return firstName + " " + lastName + " " + sex + " " + age + " " + cash;
+        return firstName + " " + lastName + " " + sex + " " + age + " " + cash + " " + Arrays.toString(garage);
     }
-    @Override
-    public void sell(Human seller, Human buyer, Double prize)
-    {
 
-        if(new Human() != null){
+    public Phone getMobilePhone() {
+        return mobilePhone;
+    }
+
+    public Animal getPet() {
+        return pet;
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, double prize) {
+
+        if (new Human() != null) {
             System.out.println("Handel ludzmi jest zabroniony");
         }
-        if (buyer.cash >= prize)
-        {
+        if (buyer.cash >= prize) {
             System.out.println("Masz wystarczająco pięniedzy na zakup.");
 
             if (garage != null) {
@@ -148,29 +200,38 @@ public class Human extends Device implements Sellable {
 
             }
 
-       }
-        else
+        } else {
+            System.out.println("Nie stać Ciebie na zakup");
 
-    {
-        System.out.println("Nie stać Ciebie na zakup");
+        }
+    }
+
+    public void setCash(double cash) {
+        this.cash = cash;
+    }
+
+    public void removeCar (Car carToRemove){
+            for (int i = 0; i < garage.length; i++) {
+                if (garage[i] != null) {
+                    if (garage[i].equals(carToRemove)) {
+                        garage[i] = null;
+                    }
+                }
+            }
+        }
+
+        public void addCar (Car car){
+            for (int i = 0; i < garage.length; i++) {
+                if (garage[i] == null) {
+                        garage[i] = car;
+                        break;
+                    }
+                }
+            }
 
     }
 
 
-
-
-
-
-
-
-
-
-
-
-    }
-
-
-}
 
 
 

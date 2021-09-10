@@ -1,7 +1,7 @@
 package com.company.devices;
 
 public class Electric extends Car implements Comparable{
-    public Electric(String producer, String model, Double engineCapacity, String color, Double value,Integer yearOfProduction ){
+    public Electric(String producer, String model, double engineCapacity, String color, Double value,Integer yearOfProduction ){
         super(producer,model,engineCapacity,color,value,yearOfProduction);
     }
     @Override
