@@ -114,6 +114,7 @@ public class Human implements Sellable {
 
     public void setCar(int spot, Car car) {
         garage[spot] = car;
+        car.getOwners().add(this);
 
     }
 

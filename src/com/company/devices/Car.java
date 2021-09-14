@@ -1,8 +1,6 @@
 package com.company.devices;
 import com.company.Human;
 import com.company.Sellable;
-
-
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -14,11 +12,7 @@ public abstract class Car extends Device implements Sellable, Comparable {
     private String color;
 
 
-    public static ArrayList<String> ownerList = new ArrayList();
-
-
-
-
+    private ArrayList<Human> owners = new ArrayList<>();
 
 
 
@@ -80,12 +74,13 @@ public abstract class Car extends Device implements Sellable, Comparable {
 
     @Override
     public void sell(Human seller, Human buyer, double prize) throws Exception {
-        if (containsCar(seller)) {
+        if (containsCarAndOwner(seller)) {
             System.out.println("Mam samochód na sprzedaż!");
             if(containsEmptySpot(buyer)){
                 if(checkBuyerCash(buyer,buyer.getCash()));
                     seller.removeCar(this);
                     buyer.addCar(this);
+                    owners.add(buyer);
                     transferCash(buyer, seller);
                     System.out.print("Sukces! Sprzedane!");
                     System.out.println();
@@ -116,9 +111,19 @@ public abstract class Car extends Device implements Sellable, Comparable {
     }
 
 
-    private boolean containsCar(Human seller){
+    public ArrayList<Human> getOwners() {
+        return owners;
+    }
+    public void displayOwnersNames(){
+        for (Human owner:owners) {
+            System.out.print(owner.getFirstName() + " " + owner.getLastName() + ",");
+
+        }
+    }
+
+    private boolean containsCarAndOwner(Human seller){
         for (Car car:seller.getGarage()) {
-            if(car != null){
+            if(car != null && car.equals(this) && getOwners().get(getOwners().size()-1).equals(seller) ){
                 return true;
             }
 
@@ -142,6 +147,24 @@ public abstract class Car extends Device implements Sellable, Comparable {
             }
         }
         return null;
+    }
+
+    public boolean wasOwner(Human human){
+        return owners.contains(human);
+    }
+    
+    public boolean checkASoldB(Human human1, Human human2){
+        for (int i = 0; i < owners.size()-1; i++) {
+            if(owners.get(i).equals(human1)) {
+                return owners.get(i + 1).equals(human2);
+            }
+            
+        }
+        return false;
+    }
+
+    public int numberOfTransactions(){
+        return owners.size()-1;
     }
 
 }

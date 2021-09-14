@@ -200,6 +200,14 @@ public class Main {
         System.out.println("garaż sprzedającego przed tranzakcją: " + seller);
         System.out.println("garaż kupującego przed tranzakcją: " + buyer);
 
+        System.out.println();
+        car.displayOwnersNames();
+
+        System.out.println();
+        System.out.println(car.checkASoldB(seller,buyer));
+        System.out.println(car.checkASoldB(buyer,seller));
+        System.out.println(car.numberOfTransactions());
+
 
 
 
