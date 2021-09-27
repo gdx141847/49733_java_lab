@@ -5,6 +5,8 @@ import com.company.devices.Device;
 import com.company.devices.Diesel;
 import com.company.devices.Phone;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Human implements Sellable {
     private String firstName;
@@ -13,11 +15,8 @@ public class Human implements Sellable {
     private int age;
     private double cash;
     private Car[] garage;
-
     private Phone mobilePhone;
     private Animal pet;
-
-
     private double salary;
 
     public String getFirstName() {
@@ -57,6 +56,7 @@ public class Human implements Sellable {
     }
 
 
+
     public Human(String firstName, String lastName, String sex, int age, double cash, int garageLength) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -64,6 +64,7 @@ public class Human implements Sellable {
         this.age = age;
         this.cash = cash;
         garage = new Car[garageLength];
+
 
     }
 
@@ -111,13 +112,15 @@ public class Human implements Sellable {
 
     }
 
-
     public void setCar(int spot, Car car) {
         garage[spot] = car;
         car.getOwners().add(this);
 
     }
 
+    public void setMobilePhone(Phone mobilePhone) {
+        this.mobilePhone = mobilePhone;
+    }
 
     public double garageValue() {
         double value = 0;

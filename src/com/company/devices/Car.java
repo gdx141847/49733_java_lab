@@ -1,8 +1,11 @@
 package com.company.devices;
+import com.company.Application;
 import com.company.Human;
 import com.company.Sellable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 
 public abstract class Car extends Device implements Sellable, Comparable {
@@ -13,6 +16,7 @@ public abstract class Car extends Device implements Sellable, Comparable {
 
 
     private ArrayList<Human> owners = new ArrayList<>();
+
 
 
 
@@ -34,6 +38,8 @@ public abstract class Car extends Device implements Sellable, Comparable {
     }
 
     public abstract void refuel();
+
+
 
 
 

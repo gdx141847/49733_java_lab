@@ -1,10 +1,10 @@
 package com.company;
-import com.company.devices.Car;
-import com.company.devices.Diesel;
-import com.company.devices.Electric;
-import com.company.devices.LPG;
+import com.company.devices.*;
+
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Set;
 
 
 public class Main {
@@ -30,6 +30,7 @@ public class Main {
         human.setSex("male");
         human.setAge(43);
         human.setCash(0.0);
+
 
 
 
@@ -158,19 +159,7 @@ public class Main {
 //        human.garageValue(seller.garage);
 
 
-
-
-
-//        System.out.println(Car.ownerList);
-//
-//        Application app = new Application();
-//        app.name = "wsb extranet";
-//        app.version = "10.01.20.01";
-//        app.prize = 59.9;
-//
-//        System.out.println(app);
-
-        Car car = new LPG("Fiat","Punto",1.2,"blue",2100.0,2005);
+/*        Car car = new LPG("Fiat","Punto",1.2,"blue",2100.0,2005);
         Car car2 = new Diesel("Volkswagen","Passat",1.9,"Silver",3200.0,1999);
         Car car3 = new Electric("Smart","Fortwo",0.0,"White",10500.0,2015);
 
@@ -207,6 +196,68 @@ public class Main {
         System.out.println(car.checkASoldB(seller,buyer));
         System.out.println(car.checkASoldB(buyer,seller));
         System.out.println(car.numberOfTransactions());
+        Car car = new LPG("Fiat","Punto",1.2,"blue",2100.0,2005);
+        Car car2 = new Diesel("Volkswagen","Passat",1.9,"Silver",3200.0,1999);
+        Car car3 = new Electric("Smart","Fortwo",0.0,"White",10500.0,2015);
+
+        Human seller = new Human("Jurek", "Kowalski", "male",43,2500.0,3);
+        seller.setCar(0,car);
+        seller.setCar(1,car2);
+        seller.setCar(2,car3);*/
+        Human buyer = new Human("Marek", "Nowak", "male",55,2900.0,3);
+/*
+        System.out.println("Wartość garażu sprzedającego = "+ seller.garageValue());
+        System.out.println("Wartość garażu kupującego = "+ buyer.garageValue());
+        System.out.println();
+        System.out.println("Garaż przed sortowaniem");
+        System.out.println(Arrays.toString(seller.getGarage()));
+        seller.sortCars();
+        System.out.println("Garaż po sortowaniu");
+        System.out.println(Arrays.toString(seller.getGarage()));
+        System.out.println();
+        System.out.println("garaż sprzedającego przed tranzakcją: " + seller);
+        System.out.println("garaż kupującego przed tranzakcją: " + buyer);
+        System.out.println();
+       try{
+           car.sell(seller,buyer,2100);
+       }catch(Exception e){
+           System.out.println(e.getMessage());
+       }
+        System.out.println("garaż sprzedającego przed tranzakcją: " + seller);
+        System.out.println("garaż kupującego przed tranzakcją: " + buyer);
+
+        System.out.println();
+        car.displayOwnersNames();
+
+        System.out.println();
+        System.out.println(car.checkASoldB(seller,buyer));
+        System.out.println(car.checkASoldB(buyer,seller));
+        System.out.println(car.numberOfTransactions());
+
+*/
+        Set<Application> a = new HashSet<>();
+
+        Application app = new Application("wsb_extranet","100.02.03.01",49.99);
+        Application app1 = new Application("navigation","000.01.01.01",149.99);
+        Application app2 = new Application("Java_helper","200.02.03.01",0.0);
+
+        a.add(app);
+        a.add(app1);
+        a.add(app2);
+
+        System.out.println(a);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

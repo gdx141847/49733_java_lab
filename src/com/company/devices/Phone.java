@@ -6,6 +6,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 public class Phone extends Device implements Sellable {
@@ -27,7 +28,9 @@ public class Phone extends Device implements Sellable {
         return "5.32.1";
     }
 
-    HashSet<String> appSet = new HashSet<>();
+    public Set<Application> appSet;
+
+
 
     public String toString() {
         return producer + " " + model + " " + operationSystem + " " + screenSize + " " + yearOfProduction;
@@ -80,10 +83,10 @@ public class Phone extends Device implements Sellable {
 
 
     public void installApp(Human buyer,Application app){
-       if(buyer.getCash() >= app.prize){
+       if(buyer.getCash() >= app.getPrize()){
             System.out.println("Możesz kupić aplikacje.");
-            appSet.add(app.name);
-           buyer.setCash(buyer.getCash() - app.prize);
+            appSet.add(app);
+           buyer.setCash(buyer.getCash() - app.getPrize());
 
         }else{
             System.out.println("nie możesz kupić aplikacji.");
@@ -91,6 +94,50 @@ public class Phone extends Device implements Sellable {
         }
 
 
+    }
+    public boolean isInstall(Application app){
+        if(appSet.contains(app)){
+            return true;
+
+        }else{
+            return false;
+        }
+    }
+    public boolean isInstallByName(Application app, String name){
+        if(appSet.contains(app.getName()))
+        {
+            return true;
+
+        }else{
+            return false;
+        }
+
+
+    }
+    public void displayFreeApp(Application app,Double prize){
+        for (Application a : appSet) {
+            if (app.getPrize() == null) {
+                System.out.print(app.getName() + " ,");
+            }
+
+            }
+    }
+    public double allAppsValue(){
+        double value = 0;
+        for (Application app : appSet) {
+            if (app != null) {
+                value += app.getPrize();
+            }
+
+        }
+        return value;
+    }
+    public void freAppsList(){
+        for (Application app:appSet) {
+            if(app.getPrize()== 0 || app.getPrize() == null)
+                System.out.println(app.getName());
+
+        }
     }
 
 
@@ -103,6 +150,7 @@ public class Phone extends Device implements Sellable {
             System.out.println("Nie mam telefonu do sprzedania.");
         }
     }
+
 }
 
 
